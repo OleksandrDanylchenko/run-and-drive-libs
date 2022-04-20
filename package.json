@@ -16,7 +16,9 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite",
+    "dev": "run-p dev:*",
+    "dev:script": "vite build --watch",
+    "dev:types": "tsc -w --emitDeclarationOnly --preserveWatchOutput & tsc-alias -w",
     "build": "run-p build:*",
     "build:scripts": "vite build",
     "build:types": "tsc --emitDeclarationOnly && tsc-alias",
