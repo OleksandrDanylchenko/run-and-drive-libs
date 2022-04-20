@@ -14,9 +14,11 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
+    "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true,
     "paths": {
       "@redux/*": ["./src/redux/*"],
       "@navigation/*": ["./src/navigation/*"],
