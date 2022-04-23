@@ -50,14 +50,17 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src', 'index.ts'),
-      formats: ['cjs'],
+      formats: ['es'],
     },
     rollupOptions: {
-      output: {
-        dir: 'dist/',
-        preserveModules: true,
-        entryFileNames: ({ name: fileName }) => `${fileName}.js`,
-      },
+      output: [
+        {
+          dir: 'dist',
+          format: 'es',
+          preserveModules: true,
+          entryFileNames: '[name].js',
+        },
+      ],
       external: regexesOfPackages,
     },
     target: 'esnext',
