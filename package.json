@@ -1,15 +1,11 @@
 {
   "name": "run-and-drive-lib",
-  "version": "0.2.1",
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.es.js",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
-      "require": "./dist/index.cjs.js",
-      "import": "./dist/index.es.js"
-    },
-    "./dist/style.css": "./dist/style.css"
+    ".": "./dist/index.js",
+    "./styles": "./dist/styles/index.js"
   },
   "sideEffects": false,
   "files": [
