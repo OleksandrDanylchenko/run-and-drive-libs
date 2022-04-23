@@ -16,12 +16,13 @@
     "dist"
   ],
   "scripts": {
-    "dev": "run-p dev:*",
+    "dev": "yarn clearOutDir && run-p dev:*",
     "dev:script": "vite build --watch",
     "dev:types": "tsc -w --emitDeclarationOnly --preserveWatchOutput & tsc-alias -w",
-    "build": "run-p build:*",
+    "build": "yarn clearOutDir && run-p build:*",
     "build:scripts": "vite build",
     "build:types": "tsc --emitDeclarationOnly && tsc-alias",
+    "clearOutDir": "del-cli dist",
     "serve": "vite preview",
     "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
     "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
@@ -51,6 +52,7 @@
     "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@typescript-eslint/parser": "^5.18.0",
     "@vitejs/plugin-react": "^1.3.1",
+    "del-cli": "^4.0.1",
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^2.7.1",
