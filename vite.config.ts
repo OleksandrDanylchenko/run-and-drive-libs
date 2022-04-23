@@ -50,7 +50,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src', 'index.ts'),
-      formats: ['es'],
+      formats: [],
     },
     rollupOptions: {
       output: [
@@ -59,6 +59,12 @@ export default defineConfig({
           format: 'es',
           preserveModules: true,
           entryFileNames: '[name].js',
+        },
+        {
+          dir: 'dist',
+          format: 'cjs',
+          preserveModules: true,
+          entryFileNames: '[name].cjs',
         },
       ],
       external: regexesOfPackages,

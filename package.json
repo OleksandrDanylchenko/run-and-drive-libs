@@ -1,16 +1,58 @@
 {
   "name": "run-and-drive-lib",
   "version": "1.0.1",
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "exports": {
-    ".": "./dist/index.js",
-    "./styles": "./dist/styles/index.js"
-  },
   "sideEffects": false,
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "module": "./dist/index.js"
+    },
+    "./components": {
+      "require": "./dist/components/index.cjs",
+      "module": "./dist/components/index.js"
+    },
+    "./hooks": {
+      "require": "./dist/hooks/index.cjs",
+      "module": "./dist/hooks/index.js"
+    },
+    "./models": {
+      "require": "./dist/models/index.cjs",
+      "module": "./dist/models/index.js"
+    },
+    "./utils": {
+      "require": "./dist/utils/index.cjs",
+      "module": "./dist/utils/index.js"
+    },
+    "./styles": {
+      "require": "./dist/styles/index.cjs",
+      "module": "./dist/styles/index.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "components": [
+        "dist/components/index.d.ts"
+      ],
+      "hooks": [
+        "dist/hooks/index.d.ts"
+      ],
+      "models": [
+        "dist/models/index.d.ts"
+      ],
+      "utils": [
+        "dist/utils/index.d.ts"
+      ],
+      "styles": [
+        "dist/styles/index.d.ts"
+      ]
+    }
+  },
   "scripts": {
     "dev": "yarn clearOutDir && run-p dev:*",
     "dev:script": "vite build --watch",
