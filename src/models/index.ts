@@ -9,3 +9,9 @@ export interface User {
   photoUrl: string;
   email: string;
 }
+
+export interface Trip {
+  id: UUID;
+  startLocation: google.maps.LatLng;
+  timeStart: Date;
+}
