@@ -34,8 +34,8 @@ export interface Car extends BaseModel {
   photosUrls: string[];
   color: string;
   mileage: number;
-  engine_capacity: number;
-  fuel_capacity: number;
+  engineCapacity: number;
+  fuelCapacity: number;
 }
 
 export interface SensorRecord extends BaseModel {
@@ -73,7 +73,7 @@ export interface TripMeasurement {
 
 export interface TripBucket extends BaseModel {
   tripId: UUID;
-  start_time: string;
-  end_time: string;
+  startTime: string;
+  endTime: string;
   measurements: TripMeasurement[];
 }
