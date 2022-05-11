@@ -10,13 +10,11 @@ export interface User extends BaseModel {
   name: string;
   surname: string;
   email: string;
-  photoUrl: string;
   phone: string;
-  refreshToken: string;
+  photoUrl: string;
 }
 
 export interface Engineer extends User {
-  activationLogin: string;
   employeeNumber: number;
 }
 
