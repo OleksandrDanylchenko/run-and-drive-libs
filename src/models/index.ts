@@ -14,8 +14,9 @@ export interface User extends BaseModel {
   photoUrl: string;
 }
 
-export interface Engineer extends User {
+export interface Engineer {
   employeeNumber: number;
+  user: User;
 }
 
 export interface Emitter extends BaseModel {
