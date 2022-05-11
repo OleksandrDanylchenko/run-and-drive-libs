@@ -32,6 +32,10 @@
     "./styles": {
       "require": "./dist/styles/index.cjs",
       "module": "./dist/styles/index.js"
+    },
+    "./redux": {
+      "require": "./dist/redux/index.cjs",
+      "module": "./dist/redux/index.js"
     }
   },
   "typesVersions": {
@@ -50,6 +54,9 @@
       ],
       "styles": [
         "dist/styles/index.d.ts"
+      ],
+      "redux": [
+        "dist/redux/index.d.ts"
       ]
     }
   },
@@ -68,16 +75,18 @@
     "type-check": "tsc",
     "prepublishOnly": "yarn build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.1"
+  },
   "peerDependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@fontsource/roboto": "^4.5.5",
     "@mui/icons-material": "^5.6.2",
     "@mui/material": "^5.6.2",
+    "luxon": "^2.3.2",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "luxon": "^2.3.2"
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.9.2",
