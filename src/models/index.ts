@@ -35,6 +35,7 @@ export interface Car extends BaseModel {
   mileage: number;
   engineCapacity: number;
   fuelCapacity: number;
+  averageConsumption: number;
 }
 
 export interface SensorsRecord {
