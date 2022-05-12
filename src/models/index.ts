@@ -37,17 +37,17 @@ export interface Car extends BaseModel {
   fuelCapacity: number;
 }
 
-export interface SensorRecord extends BaseModel {
+export interface SensorsRecord {
   carId: UUID;
-  tripId?: UUID;
-  tripStage?: 'start' | 'end';
   fuelTankOccupancy: number;
-  wheelsPressure: {
+  location: google.maps.LatLngLiteral;
+  wheelsPressure?: {
     frontLeft: number;
     frontRight: number;
     rearLeft: number;
     rearRight: number;
   };
+  timestamp: string;
 }
 
 export interface Trip extends BaseModel {
