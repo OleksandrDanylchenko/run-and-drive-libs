@@ -54,3 +54,6 @@ export const stringAvatar = (name: string) => ({
   },
   children: `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`,
 });
+
+export const toMeters = (meters: number | null) =>
+  meters ? `~${meters.toFixed(1)}m.` : null;
