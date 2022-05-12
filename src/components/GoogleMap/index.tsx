@@ -10,20 +10,17 @@ interface GoogleMapProps {
   scriptId?: string;
   onMapLoad?: BindingCallback1<google.maps.Map>;
   onMapUnmount?: BindingAction;
+  mapProps: GoogleMapProps;
   className?: string;
   children?: ReactNode;
 }
-
-const center = {
-  lat: 50.450001,
-  lng: 30.523333,
-};
 
 const GoogleMap: FC<GoogleMapProps> = ({
   scriptId = 'google-map-script',
   apiKey,
   onMapLoad: onMapLoadCallback,
   onMapUnmount: onMapUnmountCallback,
+  mapProps,
   className,
   children = '',
 }) => {
@@ -55,12 +52,12 @@ const GoogleMap: FC<GoogleMapProps> = ({
 
   return (
     <GoogleMapLib
-      center={center}
       zoom={11}
       onLoad={onMapLoad}
       onUnmount={onMapUnmount}
       mapContainerStyle={GoogleMapContainer}
       mapContainerClassName={className}
+      {...mapProps}
     >
       {children}
     </GoogleMapLib>
