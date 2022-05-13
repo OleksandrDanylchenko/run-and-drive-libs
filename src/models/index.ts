@@ -63,7 +63,6 @@ export interface Trip extends BaseModel {
     time: string;
   };
   totalDistance: number;
-  totalTime: number;
 }
 
 export interface TripMeasurement {

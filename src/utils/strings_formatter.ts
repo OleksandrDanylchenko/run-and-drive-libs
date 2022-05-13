@@ -1,3 +1,5 @@
+import { DateTime } from 'luxon';
+
 const locale = 'en-US';
 
 export const capitalizeFirstLetter = (input: string): string => {
@@ -57,3 +59,11 @@ export const stringAvatar = (name: string) => ({
 
 export const toMeters = (meters: number | null) =>
   meters ? `~${meters.toFixed(1)}m.` : null;
+
+export const timeToHumanAndRelative = (time: string) => {
+  const dateTime = DateTime.fromISO(time);
+  return {
+    localeString: dateTime.toLocaleString(DateTime.DATETIME_SHORT),
+    relative: dateTime.toRelative(),
+  };
+};
