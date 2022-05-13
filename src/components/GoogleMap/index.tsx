@@ -10,7 +10,7 @@ interface GoogleMapProps {
   scriptId?: string;
   onMapLoad?: BindingCallback1<google.maps.Map>;
   onMapUnmount?: BindingAction;
-  mapProps: GoogleMapProps;
+  mapProps?: GoogleMapProps;
   className?: string;
   children?: ReactNode;
 }
@@ -20,7 +20,7 @@ const GoogleMap: FC<GoogleMapProps> = ({
   apiKey,
   onMapLoad: onMapLoadCallback,
   onMapUnmount: onMapUnmountCallback,
-  mapProps,
+  mapProps = {},
   className,
   children = '',
 }) => {
@@ -29,11 +29,12 @@ const GoogleMap: FC<GoogleMapProps> = ({
     googleMapsApiKey: apiKey,
   });
 
+  /**
+   * setTimeout is required to properly render any children for the Map
+   */
   const onMapLoad = useCallback(
     (map: google.maps.Map) => {
-      const bounds = new window.google.maps.LatLngBounds();
-      map.fitBounds(bounds);
-      onMapLoadCallback?.(map);
+      setTimeout(() => onMapLoadCallback?.(map));
     },
     [onMapLoadCallback],
   );
