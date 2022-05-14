@@ -15,6 +15,12 @@ interface GoogleMapProps {
   children?: ReactNode;
 }
 
+export const constants = {
+  markerSize: 33,
+  startMarkerUrl: 'https://i.ibb.co/x7cwmS1/red-marker.png',
+  endMarkerUrl: 'https://i.ibb.co/phXQnbk/blue-marker.png',
+};
+
 const GoogleMap: FC<GoogleMapProps> = ({
   scriptId = 'google-map-script',
   apiKey,
