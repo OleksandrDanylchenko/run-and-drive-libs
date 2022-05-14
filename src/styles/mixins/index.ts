@@ -1,4 +1,4 @@
-import { css } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
 import { Property } from 'csstype';
 
 // https://allyjs.io/tutorials/hiding-elements.html#2017-edition-of-visuallyhidden
@@ -60,3 +60,22 @@ export const flexbox = (options: {
   flex-grow: ${options.grow};
   gap: ${options.gap};
 `;
+
+export const getMuiToolbarHeight = (theme: Theme) => {
+  const toolbar = theme.mixins.toolbar;
+
+  const minHeight = toolbar.minHeight;
+  const after600 = (toolbar['@media (min-width:600px)'] as any).minHeight;
+
+  return css`
+    --toolbar-height: ${minHeight}px;
+
+    @media (min-width: 600px) {
+      --toolbar-height: ${after600}px;
+    }
+
+    @media (min-width: 0px) and (orientation: landscape) {
+      --toolbar-height: ${after600}px;
+    }
+  `;
+};
