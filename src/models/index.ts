@@ -38,8 +38,9 @@ export interface Car extends BaseModel {
   averageConsumption: number;
 }
 
-export interface SensorsRecord {
+export interface SensorsRecord extends BaseModel {
   carId: UUID;
+  tripId?: UUID;
   fuelTankOccupancy: number;
   location: google.maps.LatLngLiteral;
   wheelsPressure?: {
