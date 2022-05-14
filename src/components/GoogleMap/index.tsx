@@ -1,11 +1,15 @@
 import { FC, memo, ReactNode, useCallback } from 'react';
 
-import { GoogleMap as GoogleMapLib, useLoadScript } from '@react-google-maps/api';
+import {
+  GoogleMap as GoogleMapLib,
+  GoogleMapProps,
+  useLoadScript,
+} from '@react-google-maps/api';
 
 import { GoogleMapContainer } from '@components/GoogleMap/styles';
 import { BindingAction, BindingCallback1 } from '@models/functions';
 
-interface GoogleMapProps {
+interface Props {
   apiKey: string;
   scriptId?: string;
   onMapLoad?: BindingCallback1<google.maps.Map>;
@@ -21,7 +25,7 @@ export const constants = {
   endMarkerUrl: 'https://i.ibb.co/phXQnbk/blue-marker.png',
 };
 
-const GoogleMap: FC<GoogleMapProps> = ({
+const GoogleMap: FC<Props> = ({
   scriptId = 'google-map-script',
   apiKey,
   onMapLoad: onMapLoadCallback,
