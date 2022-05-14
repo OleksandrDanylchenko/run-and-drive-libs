@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export * from './functions';
 
 export type UUID = string;
@@ -69,4 +71,10 @@ export interface Trip extends BaseModel {
 export enum TripState {
   'IN_PROGRESS' = 'IN_PROGRESS',
   'ENDED' = 'ENDED',
+}
+
+export interface TableRowData {
+  label: string;
+  value: number | string | ReactNode | null;
+  highlighted?: boolean;
 }
