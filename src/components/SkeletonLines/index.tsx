@@ -1,6 +1,7 @@
 import React, { FC, useMemo } from 'react';
 
 import Skeleton from '@mui/material/Skeleton';
+import Stack from '@mui/material/Stack';
 
 import { getRandomInt } from '@utils/random';
 
@@ -8,12 +9,16 @@ interface Props {
   linesNumber?: number;
   minPercent?: number;
   maxPercent?: number;
+  height?: number;
+  className?: string;
 }
 
 const SkeletonLines: FC<Props> = ({
   linesNumber = 4,
   minPercent = 80,
   maxPercent = 95,
+  height,
+  className,
 }) => {
   const lines = useMemo(() => {
     const lines: Array<{ key: number; widthPercent: number }> = [];
@@ -25,11 +30,11 @@ const SkeletonLines: FC<Props> = ({
   }, [linesNumber, maxPercent, minPercent]);
 
   return (
-    <>
+    <Stack spacing={1} className={className}>
       {lines.map(({ key, widthPercent }) => (
-        <Skeleton key={key} width={`${widthPercent}%`} />
+        <Skeleton key={key} width={`${widthPercent}%`} height={height} />
       ))}
-    </>
+    </Stack>
   );
 };
 

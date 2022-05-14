@@ -52,8 +52,8 @@ export interface SensorsRecord {
 }
 
 export interface Trip extends BaseModel {
-  userId: UUID;
-  carId: UUID;
+  user: User;
+  car: Car;
   start: {
     location: google.maps.LatLngLiteral;
     time: string;
