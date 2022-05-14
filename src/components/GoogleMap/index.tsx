@@ -40,6 +40,8 @@ const GoogleMap: FC<GoogleMapProps> = ({
    */
   const onMapLoad = useCallback(
     (map: google.maps.Map) => {
+      const bounds = new google.maps.LatLngBounds();
+      map.fitBounds(bounds);
       setTimeout(() => onMapLoadCallback?.(map));
     },
     [onMapLoadCallback],
