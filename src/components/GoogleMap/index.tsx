@@ -20,7 +20,7 @@ interface Props {
 }
 
 export const constants = {
-  markerSize: 33,
+  markerSize: 25,
   startMarkerUrl: 'https://i.ibb.co/x7cwmS1/red-marker.png',
   endMarkerUrl: 'https://i.ibb.co/phXQnbk/blue-marker.png',
 };
@@ -46,7 +46,7 @@ const GoogleMap: FC<Props> = ({
     (map: google.maps.Map) => {
       const bounds = new google.maps.LatLngBounds();
       map.fitBounds(bounds);
-      setTimeout(() => onMapLoadCallback?.(map));
+      setTimeout(() => onMapLoadCallback?.(map), 400);
     },
     [onMapLoadCallback],
   );
