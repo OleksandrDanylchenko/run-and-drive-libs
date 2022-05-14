@@ -65,14 +65,7 @@ export interface Trip extends BaseModel {
   totalDistance: number;
 }
 
-export interface TripMeasurement {
-  time: string;
-  location: google.maps.LatLngLiteral;
-}
-
-export interface TripBucket extends BaseModel {
-  tripId: UUID;
-  startTime: string;
-  endTime: string;
-  measurements: TripMeasurement[];
+export enum TripState {
+  'IN_PROGRESS' = 'IN_PROGRESS',
+  'ENDED' = 'ENDED',
 }
