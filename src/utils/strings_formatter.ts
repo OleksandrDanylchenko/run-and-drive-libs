@@ -67,7 +67,3 @@ export const timeToHumanAndRelative = (time: string) => {
     relative: dateTime.toRelative(),
   };
 };
-
-export const locationToString = ({ lat, lng }: google.maps.LatLngLiteral) => {
-  return `Lat: ${lat} Lng: ${lng}`;
-};

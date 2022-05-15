@@ -15,7 +15,7 @@ export interface User extends BaseModel {
   phone: string;
   photoUrl: string;
   tripsIds: string[];
-  createdAt: number;
+  createdAt: string;
 }
 
 export interface Engineer {
